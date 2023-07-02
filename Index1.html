@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <div id="message">
+    please wait your movie is loading
+  </div>
+</body>
+<script>
+
+
+
+
+  // Function to get the value of a parameter from the URL
+function getURLParameter(name) {
+  name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+  var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+  var results = regex.exec(location.search);
+  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+
+
+
+
+
+
+// Get the value from the 'val' parameter in the URL
+var userval = getURLParameter('value');
+var link = getURLParameter('link');
+
+if (link === "") {
+
+  document.getElementById("message").innerText="there is a problem phrasing the link";
+  
+
+} else {
+
+  // Display the value and link in the console
+  //set userval and link in localstorage
+  
+  
+
+localStorage.setItem("user",userval);
+localStorage.setItem("link",link);
+
+/*
+var a = localStorage.getItem("user",userval);
+var b = localStorage.getItem("link",link);
+
+console.log(a);
+console.log(b);*/
+
+window.open("https://sites.google.com/view/ankit-ka-try-shortner/home","_blank");
+
+
+
+};
+
+
+
+
+
+
+
+
+
+  
+</script>
+
+</html>
